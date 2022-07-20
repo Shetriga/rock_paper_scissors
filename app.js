@@ -1,8 +1,10 @@
+let playerScore = 0,
+computerScore = 0;
 const computerSelection = () => {
     let possible_outcomes = ["rock", "paper", "scissors"];
-    let randomNumber = Math.floor( Math.random() * ( 2 - 0 + 1)) + 0;  // Generate random number between 0 and 2
-    console.log("Computer Answer: " + possible_outcomes[randomNumber]);
-    return possible_outcomes[randomNumber];                           // which is the index of the computer choice
+    let randomNumber = Math.floor( Math.random() * ( 2 - 0 + 1)) + 0;    // Generate random number between 0 and 2
+    console.log("Computer Answer: " + possible_outcomes[randomNumber]); // which is the index of the computer choice
+    return possible_outcomes[randomNumber];
 }
 // const none = computerSelection();
 const playerSelection = () => {
@@ -11,27 +13,33 @@ const playerSelection = () => {
 const playRound = (player_answer, computer_answer) => {
     if (player_answer === "rock") {
         if (computer_answer === "rock") {
-            alert("Tie");
+            alert(`Tie\nplayer Score ${playerScore}  -  ${computerScore} Computer Score`);
         } else if (computer_answer === "paper") {
-            alert("You Lose! Paper beats rock");
+            computerScore++;
+            alert(`You Lose! Paper beats rock\nplayer Score ${playerScore}  -  ${computerScore} Computer Score`);
         } else {
-            alert("You win! Rock beats scissors");
+            playerScore++;
+            alert(`You win! Rock beats scissors\nplayer Score ${playerScore}  -  ${computerScore} Computer Score`);
         }
     } else if (player_answer === "paper") {
         if (computer_answer === "rock") {
-            alert("You win! Paper beats rock")
+            playerScore++;
+            alert(`You win! Paper beats rock\nplayer Score ${playerScore}  -  ${computerScore} Computer Score`)
         } else if (computer_answer === "paper") {
-            alert("Tie");
+            alert(`Tie\nplayer Score ${playerScore}  -  ${computerScore} Computer Score`);
         } else {
-            alert("You lose! Scissors beat paper")
+            computerScore++;
+            alert(`You lose! Scissors beat paper\nplayer Score ${playerScore}  -  ${computerScore} Computer Score`);
         }
     } else if (player_answer === "scissors") {
         if (computer_answer === "rock") {
-            alert("You lose! Rock beats scissors");
+            computerScore++;
+            alert(`You lose! Rock beats scissors\nplayer Score ${playerScore}  -  ${computerScore} Computer Score`);
         } else if(computer_answer === "paper") {
-            alert("You win! Scissors beat paper");
+            playerScore++;
+            alert(`You win! Scissors beat paper\nplayer Score ${playerScore}  -  ${computerScore} Computer Score`);
         } else {
-            alert("Tie");
+            alert(`Tie\nplayer Score ${playerScore}  -  ${computerScore} Computer Score`);
         }
     }
 }
