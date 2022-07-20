@@ -6,7 +6,6 @@ const computerSelection = () => {
     console.log("Computer Answer: " + possible_outcomes[randomNumber]); // which is the index of the computer choice
     return possible_outcomes[randomNumber];
 }
-// const none = computerSelection();
 const playerSelection = () => {
     return prompt("Type your selection ['Rock', 'Paper' or 'scissors']");
 }
